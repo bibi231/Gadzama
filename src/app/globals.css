@@ -1,0 +1,444 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==============================================================================
+   GADZAMA.COM - DESIGN SYSTEM
+   Navy & Gold. Typography matched to J-K Gadzama LLP (Old Standard TT + Inter),
+   elevated with editorial detailing.
+   ============================================================================== */
+
+:root,
+:root[data-theme="navy"] {
+  --bg: #F7F4EC;
+  --surface: #FFFFFF;
+  --surface2: #EFEBE0;
+  --accent: #C2A14D;
+  --accent-deep: #A88B3D;
+  --accent-light: rgba(194, 161, 77, 0.2);
+  --accent-glow: rgba(194, 161, 77, 0.07);
+  --text: #1C2433;
+  --text-muted: #6B7385;
+  --hairline: #E2DBCB;
+  --navy: #0F1E3D;
+  --navy-deep: #0B182F;
+  --navy-line: rgba(255, 255, 255, 0.12);
+  --nav-bg: #0F1E3D;
+  --nav-text: #FFFFFF;
+  --hero-bg: #0F1E3D;
+  --header-bg: #0F1E3D;
+  --card-bg: #FFFFFF;
+  --card-border: #E2DBCB;
+  --footer-bg: #0B182F;
+  --btn-filled-bg: #C2A14D;
+  --btn-filled-text: #0F1E3D;
+  --btn-outline-border: rgba(255, 255, 255, 0.35);
+  --btn-outline-text: #FFFFFF;
+  --font-display: 'Old Standard TT', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Regal fallback theme retained for optional switching */
+:root[data-theme="regal"] {
+  --bg: #0A0A0A;
+  --surface: #141414;
+  --surface2: #1A1A1A;
+  --accent: #D4AF37;
+  --accent-deep: #B8912E;
+  --accent-light: rgba(212, 175, 55, 0.25);
+  --accent-glow: rgba(212, 175, 55, 0.08);
+  --text: #F5F5F0;
+  --text-muted: #A9A9A9;
+  --hairline: rgba(212, 175, 55, 0.25);
+  --navy: #0A0A0A;
+  --navy-deep: #060606;
+  --navy-line: rgba(212, 175, 55, 0.2);
+  --nav-bg: #0A0A0A;
+  --nav-text: #F5F5F0;
+  --hero-bg: #0A0A0A;
+  --header-bg: #0A0A0A;
+  --card-bg: #141414;
+  --card-border: rgba(212, 175, 55, 0.25);
+  --footer-bg: #060606;
+  --btn-filled-bg: #D4AF37;
+  --btn-filled-text: #0A0A0A;
+  --btn-outline-border: rgba(212, 175, 55, 0.6);
+  --btn-outline-text: #D4AF37;
+  --font-display: 'Old Standard TT', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-light: var(--accent-light);
+  --color-accent-glow: var(--accent-glow);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-hairline: var(--hairline);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-line: var(--navy-line);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-text: var(--nav-text);
+  --color-hero-bg: var(--hero-bg);
+  --color-header-bg: var(--header-bg);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-footer-bg: var(--footer-bg);
+  --color-btn-filled-bg: var(--btn-filled-bg);
+  --color-btn-filled-text: var(--btn-filled-text);
+  --color-btn-outline-border: var(--btn-outline-border);
+  --color-btn-outline-text: var(--btn-outline-text);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+/* ==============================================================================
+   BASE
+   ============================================================================== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+}
+
+/* Italic serif accent, the firm-site signature ("law *firm*.") */
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ==============================================================================
+   EDITORIAL DETAILS
+   ============================================================================== */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.eyebrow-line::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.gold-rule {
+  width: 56px;
+  height: 2px;
+  background: var(--accent);
+  border: none;
+}
+
+/* Huge ghosted section numerals (01, 02...) */
+.section-numeral {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 120px);
+  line-height: 1;
+  font-weight: 400;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-light);
+}
+
+.section-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (min-width: 1024px) {
+  .section-container { padding: 0 80px; }
+}
+
+/* ==============================================================================
+   BUTTONS
+   ============================================================================== */
+.btn-filled {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  background: var(--btn-filled-bg);
+  color: var(--btn-filled-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--btn-filled-bg);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+}
+.btn-filled:hover {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  background: transparent;
+  color: var(--btn-outline-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--btn-outline-border);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Animated arrow-link */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+.arrow-link:hover { gap: 14px; }
+
+/* Underline-reveal link (nav) */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==============================================================================
+   CARDS
+   ============================================================================== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 40px 36px;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.45s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 30, 61, 0.10);
+  border-color: var(--accent);
+}
+.card-accent-top { border-top: 2px solid var(--accent); }
+
+/* Numbered practice rows (firm-site pattern, elevated) */
+.numbered-row {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: padding-left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.numbered-row:hover { padding-left: 12px; }
+.numbered-row .num {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* Pull quote */
+.pull-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* ==============================================================================
+   HERO EXTRAS
+   ============================================================================== */
+/* Slow-drifting bokeh orbs */
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(18px, -22px) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.bokeh {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  animation: drift 14s ease-in-out infinite;
+  pointer-events: none;
+}
+.bokeh:nth-child(2) { animation-duration: 18s; animation-delay: -6s; }
+.bokeh:nth-child(3) { animation-duration: 22s; animation-delay: -11s; }
+.bokeh:nth-child(4) { animation-duration: 16s; animation-delay: -3s; }
+.bokeh:nth-child(5) { animation-duration: 26s; animation-delay: -14s; }
+
+/* Fine grain over the navy hero for texture */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Scrolling credential marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ==============================================================================
+   MOTION
+   ============================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fadeInSlow { animation: fadeInSlow 1.4s ease forwards; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bokeh, .marquee-track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==============================================================================
+   MISC
+   ============================================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--navy);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50;
+  font-size: 18px;
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-2px); }
+
+::selection { background: var(--accent); color: var(--navy); }
+
+.form-input {
+  width: 100%;
+  padding: 15px 18px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--hairline);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.form-input::placeholder { color: var(--text-muted); }
+
+.page-header {
+  background: var(--header-bg);
+  color: var(--nav-text);
+  padding: 96px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 9999px;
+  background: var(--accent-glow);
+  filter: blur(80px);
+}

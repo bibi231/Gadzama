@@ -1,0 +1,6 @@
+node_modules
+.next
+.git
+build.log
+*.tsbuildinfo
+.fuse_hidden*
