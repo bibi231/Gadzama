@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import CookieConsent from "@/components/CookieConsent";
+import WelcomeBanner from "@/components/WelcomeBanner";
 import { siteConfig } from "@/content/site";
 
 const inter = Inter({
@@ -116,6 +118,8 @@ export default function RootLayout({
         <main className="flex-1 pt-[80px]">{children}</main>
         <Footer />
         <BackToTop />
+        <WelcomeBanner />
+        <CookieConsent />
       </body>
     </html>
   );

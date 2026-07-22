@@ -243,7 +243,7 @@ export default function AboutPage() {
                   alt="Chief Gadzama in his chamber"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/70 hidden lg:block" />
               </div>

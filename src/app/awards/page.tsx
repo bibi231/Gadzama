@@ -43,7 +43,7 @@ export default function AwardsPage() {
                   </p>
                 </div>
               </div>
-              <div className="relative h-64 lg:h-auto lg:min-h-[400px]">
+              <div className="zoom-img relative h-64 lg:h-auto lg:min-h-[400px]">
                 <Image
                   src="/images/gallery/g5.jpg"
                   alt="Chief Joe-Kyari Gadzama, OFR, SAN"
@@ -73,17 +73,20 @@ export default function AwardsPage() {
                     </h2>
                   </div>
                   <div className="lg:col-span-8">
-                    <div className="divide-y divide-hairline">
+                    <div className="space-y-1">
                       {group.items.map((item) => (
                         <div
                           key={item.title}
-                          className="py-5 flex gap-6 items-baseline"
+                          className="glow-row group/item flex gap-5 items-baseline px-4 py-4 border-b border-hairline/60"
                         >
-                          <span className="font-display text-accent-deep text-sm w-16 shrink-0">
+                          <span className="year-badge text-sm w-14 shrink-0 tabular-nums">
                             {item.year || ""}
                           </span>
                           <div>
-                            <h3 className="text-lg text-text font-display">
+                            <h3 className="glow-title text-lg text-text font-display flex items-center gap-2.5">
+                              <span className="glow-mark text-[10px]" aria-hidden>
+                                ◆
+                              </span>
                               {item.title}
                             </h3>
                             {item.detail && (

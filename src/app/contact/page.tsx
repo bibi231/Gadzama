@@ -4,6 +4,7 @@ import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import SocialIcon from "@/components/SocialIcon";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { contact, socials } from "@/content/site";
 
 const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -56,53 +57,75 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left: Contact info */}
             <RevealOnScroll>
-              <div className="space-y-8">
-                <div>
-                  <p className="eyebrow eyebrow-line mb-3">Office</p>
-                  <a
-                    href={mapsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-start gap-2 text-text not-italic text-[15px] leading-relaxed hover:text-accent-deep transition-colors"
-                  >
-                    <address className="not-italic">
+              <div className="space-y-4">
+                {/* Office */}
+                <a
+                  href={mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex gap-4 items-start p-5 bg-surface border border-hairline rounded-lg hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,30,61,0.08)] transition-all"
+                >
+                  <span className="shrink-0 w-11 h-11 rounded-full bg-accent/10 text-accent-deep flex items-center justify-center group-hover:bg-accent group-hover:text-navy transition-colors">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="eyebrow mb-1.5">Office</p>
+                    <address className="not-italic text-text text-[15px] leading-relaxed">
                       {contact.address.line1}
                       <br />
                       {contact.address.line2}
                       <br />
                       {contact.address.line3}
                     </address>
-                    <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity mt-1">
-                      ↗
+                    <span className="inline-flex items-center gap-1 text-text-muted text-xs mt-2 group-hover:text-accent-deep transition-colors">
+                      Open in Google Maps <span aria-hidden>↗</span>
                     </span>
-                  </a>
-                  <p className="text-text-muted text-xs mt-2">
-                    Click to open in Google Maps
-                  </p>
-                </div>
+                  </div>
+                </a>
 
-                <div>
-                  <p className="eyebrow eyebrow-line mb-3">Phone</p>
-                  <a
-                    href={telHref}
-                    className="text-text text-[15px] hover:text-accent transition-colors"
-                  >
-                    {contact.phone}
-                  </a>
-                </div>
+                {/* Phone */}
+                <a
+                  href={telHref}
+                  className="group flex gap-4 items-center p-5 bg-surface border border-hairline rounded-lg hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,30,61,0.08)] transition-all"
+                >
+                  <span className="shrink-0 w-11 h-11 rounded-full bg-accent/10 text-accent-deep flex items-center justify-center group-hover:bg-accent group-hover:text-navy transition-colors">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="eyebrow mb-1">Phone</p>
+                    <p className="text-text text-[15px] group-hover:text-accent-deep transition-colors">
+                      {contact.phone}
+                    </p>
+                  </div>
+                </a>
 
-                <div>
-                  <p className="eyebrow eyebrow-line mb-3">Email</p>
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="text-accent text-[15px] hover:underline"
-                  >
-                    {contact.email}
-                  </a>
-                </div>
+                {/* Email */}
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="group flex gap-4 items-center p-5 bg-surface border border-hairline rounded-lg hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,30,61,0.08)] transition-all"
+                >
+                  <span className="shrink-0 w-11 h-11 rounded-full bg-accent/10 text-accent-deep flex items-center justify-center group-hover:bg-accent group-hover:text-navy transition-colors">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-10 6L2 7" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="eyebrow mb-1">Email</p>
+                    <p className="text-text text-[15px] group-hover:text-accent-deep transition-colors break-all">
+                      {contact.email}
+                    </p>
+                  </div>
+                </a>
 
-                <div>
-                  <p className="eyebrow eyebrow-line mb-4">Connect</p>
+                {/* Connect */}
+                <div className="p-5">
+                  <p className="eyebrow mb-4">Connect</p>
                   <div className="flex gap-3">
                     {socials.map((s) =>
                       s.pending ? (
@@ -126,6 +149,21 @@ export default function ContactPage() {
                         </a>
                       )
                     )}
+                  </div>
+                </div>
+
+                {/* Newsletter */}
+                <div className="p-6 bg-hero-bg rounded-lg card-accent-top relative overflow-hidden grain">
+                  <div className="pointer-events-none absolute inset-0" aria-hidden>
+                    <div className="bokeh top-[-20px] right-[6%] w-40 h-40 bg-accent/[0.12]" />
+                  </div>
+                  <div className="relative z-10">
+                    <p className="eyebrow mb-2">Newsletter</p>
+                    <p className="text-white/60 text-sm mb-4 max-w-md">
+                      Subscribe for occasional updates on Chief Gadzama&apos;s work
+                      in arbitration, ADR and the profession.
+                    </p>
+                    <NewsletterSignup source="contact-page" variant="dark" compact />
                   </div>
                 </div>
               </div>

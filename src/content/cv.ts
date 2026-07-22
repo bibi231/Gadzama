@@ -4,6 +4,7 @@ export interface CVEntry {
   title: string;
   institution: string;
   year: string;
+  url?: string; // optional official link (institution, or title if no institution)
 }
 
 export interface CVSection {
@@ -20,6 +21,7 @@ export const arbitrationCV: CVSection[] = [
         title: "Diploma, International Commercial Arbitration",
         institution: "Keble College, University of Oxford, UK",
         year: "2006",
+        url: "https://www.keble.ox.ac.uk/",
       },
       {
         title: "IP3 Programme",
@@ -30,21 +32,25 @@ export const arbitrationCV: CVSection[] = [
         title: "Regulation Short Course",
         institution: "London School of Economics (LSE)",
         year: "2010",
+        url: "https://www.lse.ac.uk/",
       },
       {
         title: "PhD Candidate, Energy & Natural Resources Law",
         institution: "Nile University of Nigeria",
         year: "Present",
+        url: "https://www.nileuniversity.edu.ng/",
       },
       {
         title: "LL.B (Common Law) · Best Graduating Student",
         institution: "University of Maiduguri",
         year: "1986",
+        url: "https://www.unimaid.edu.ng/",
       },
       {
         title: "BL, Called to the Nigerian Bar",
         institution: "Nigerian Law School",
         year: "1986",
+        url: "https://nigerianlawschool.edu.ng/",
       },
     ],
   },
@@ -55,41 +61,49 @@ export const arbitrationCV: CVSection[] = [
         title: "Chartered Arbitrator (C.Arb.) · Fellow, CIArb",
         institution: "Chartered Institute of Arbitrators",
         year: "Present",
+        url: "https://www.ciarb.org/about/governance/branches/nigeria/",
       },
       {
         title: "Chair, Board of Trustees",
         institution: "Janada Int'l Centre for Arbitration & Mediation (JICAM)",
         year: "Present",
+        url: "https://www.j-kgadzamallp.com/",
       },
       {
         title: "Panel of Neutrals",
         institution: "Abuja & Lagos Multi-Door Courthouses",
         year: "Present",
+        url: "https://lagosmultidoor.org/",
       },
       {
         title: "Pioneer Board Member",
         institution: "Lagos Court of Arbitration",
         year: "Present",
+        url: "https://lca.org.ng/",
       },
       {
         title: "Member",
         institution: "London Court of International Arbitration (LCIA)",
         year: "Present",
+        url: "https://www.lcia.org/",
       },
       {
         title: "Member",
         institution: "CEDR (England) & MIAC (Mauritius)",
         year: "Present",
+        url: "https://www.cedr.com/",
       },
       {
         title: "Member",
         institution: "RCICA",
         year: "Present",
+        url: "https://rcicalagos.org/",
       },
       {
         title: "Fellow",
         institution: "Nigerian Institute of Chartered Arbitrators (FNICArb)",
         year: "Present",
+        url: "https://nicarb.org.ng/",
       },
     ],
   },
@@ -105,11 +119,13 @@ export const arbitrationCV: CVSection[] = [
         title: "Arbitration Expert",
         institution: "Who's Who Legal",
         year: "Featured",
+        url: "https://whoswholegal.com/",
       },
       {
         title: "Band One, Disputes",
         institution: "Chambers and Partners",
         year: "Ranked",
+        url: "https://chambers.com/",
       },
       {
         title: "Senior Advocate of Nigeria (SAN)",
@@ -129,11 +145,13 @@ export const generalCV: CVSection[] = [
         title: "PhD Candidate, Energy & Natural Resources Law",
         institution: "Nile University of Nigeria",
         year: "Present",
+        url: "https://www.nileuniversity.edu.ng/",
       },
       {
         title: "Diploma, International Commercial Arbitration",
         institution: "Keble College, University of Oxford, UK",
         year: "2006",
+        url: "https://www.keble.ox.ac.uk/",
       },
       {
         title: "IP3 Programme",
@@ -144,16 +162,19 @@ export const generalCV: CVSection[] = [
         title: "Regulation Short Course",
         institution: "London School of Economics (LSE)",
         year: "2010",
+        url: "https://www.lse.ac.uk/",
       },
       {
         title: "LL.B (Common Law) · Best Graduating Student",
         institution: "University of Maiduguri",
         year: "1986",
+        url: "https://www.unimaid.edu.ng/",
       },
       {
         title: "BL, Called to the Nigerian Bar & Enrolled at Supreme Court",
         institution: "Nigerian Law School",
         year: "1986",
+        url: "https://nigerianlawschool.edu.ng/",
       },
     ],
   },
@@ -164,16 +185,19 @@ export const generalCV: CVSection[] = [
         title: "Founding Principal Partner",
         institution: "J-K Gadzama LLP, Abuja",
         year: "Present",
+        url: "https://www.j-kgadzamallp.com/",
       },
       {
         title: "Chancellor",
         institution: "Newgate University, Minna",
         year: "2025",
+        url: "https://www.newgateuniversityminna.edu.ng/",
       },
       {
         title: "Part-Time Lecturer, Energy & Natural Resources Law",
         institution: "Nile University of Nigeria",
         year: "Present",
+        url: "https://www.nileuniversity.edu.ng/",
       },
       {
         title: "Chairman, Mentoring Committee for Young Lawyers",
@@ -184,16 +208,19 @@ export const generalCV: CVSection[] = [
         title: "SEC-Registered Capital Market Consultant",
         institution: "Securities and Exchange Commission",
         year: "Present",
+        url: "https://sec.gov.ng/",
       },
       {
         title: "Legal Consultant",
         institution: "Bureau of Public Enterprises / National Council on Privatization",
         year: "",
+        url: "https://bpe.gov.ng/",
       },
       {
         title: "Lead Counsel to INEC and Major Political Parties",
         institution: "Independent National Electoral Commission",
         year: "",
+        url: "https://www.inecnigeria.org/",
       },
       {
         title: "Notary Public",
@@ -241,12 +268,42 @@ export const generalCV: CVSection[] = [
   {
     heading: "Professional Associations",
     entries: [
-      { title: "International Bar Association (IBA)", institution: "", year: "" },
-      { title: "Nigerian Bar Association (NBA)", institution: "", year: "" },
-      { title: "Bar of England and Wales", institution: "", year: "" },
-      { title: "Chartered Institute of Arbitrators (CIArb)", institution: "Fellow", year: "" },
-      { title: "Council Member, African Bar Association", institution: "", year: "" },
-      { title: "Commonwealth Lawyers' Association", institution: "Member", year: "" },
+      {
+        title: "International Bar Association (IBA)",
+        institution: "",
+        year: "",
+        url: "https://www.ibanet.org/",
+      },
+      {
+        title: "Nigerian Bar Association (NBA)",
+        institution: "",
+        year: "",
+        url: "https://nigerianbar.org.ng/",
+      },
+      {
+        title: "Bar of England and Wales",
+        institution: "",
+        year: "",
+        url: "https://www.barcouncil.org.uk/",
+      },
+      {
+        title: "Chartered Institute of Arbitrators (CIArb)",
+        institution: "Fellow",
+        year: "",
+        url: "https://www.ciarb.org/about/governance/branches/nigeria/",
+      },
+      {
+        title: "Council Member, African Bar Association",
+        institution: "",
+        year: "",
+        url: "https://africanbar.org/",
+      },
+      {
+        title: "Commonwealth Lawyers' Association",
+        institution: "Member",
+        year: "",
+        url: "https://www.commonwealthlawyers.com/",
+      },
     ],
   },
 ];

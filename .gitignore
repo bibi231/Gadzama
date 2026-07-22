@@ -40,6 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# OneDrive / editor cruft
+# OneDrive / editor cruft and unused assets (kept out of deploys)
 .fuse_hidden*
 build.log
+/public/images/chief-cutout.png
+/public/images/chief-cutout.png.png

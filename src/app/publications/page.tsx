@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import { publications, booksEmpty, papersEmpty } from "@/content/publications";
+import {
+  publications,
+  booksEmpty,
+  papersEmpty,
+  acquisition,
+  llpNewsletter,
+} from "@/content/publications";
 
 export default function PublicationsPage() {
   const [activeTab, setActiveTab] = useState<"book" | "paper">("book");
@@ -109,6 +116,71 @@ export default function PublicationsPage() {
               </div>
             </RevealOnScroll>
           )}
+        </div>
+      </section>
+
+      {/* ── Where to buy / collect + LLP newsletter ─────────────────────────── */}
+      <section className="bg-surface border-t border-hairline py-16 md:py-24">
+        <div className="section-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Acquire the books */}
+            <RevealOnScroll>
+              <div className="card card-accent-top h-full flex flex-col">
+                <p className="eyebrow eyebrow-line mb-5">Acquire the works</p>
+                <h2 className="text-2xl sm:text-3xl text-text mb-4">
+                  {acquisition.heading}
+                </h2>
+                <p className="text-text-muted leading-relaxed mb-8">
+                  {acquisition.body}
+                </p>
+                <div className="mt-auto flex flex-wrap gap-4">
+                  {acquisition.links.map((l) =>
+                    l.external ? (
+                      <a
+                        key={l.label}
+                        href={l.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-filled"
+                      >
+                        {l.label} ↗
+                      </a>
+                    ) : (
+                      <Link key={l.label} href={l.url} className="btn-outline !text-text !border-hairline hover:!border-accent hover:!text-accent-deep">
+                        {l.label} →
+                      </Link>
+                    )
+                  )}
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            {/* LLP newsletter */}
+            <RevealOnScroll>
+              <div className="card card-accent-top h-full flex flex-col bg-hero-bg grain relative overflow-hidden">
+                <div className="pointer-events-none absolute inset-0" aria-hidden>
+                  <div className="bokeh top-[-30px] right-[8%] w-56 h-56 bg-accent/[0.10]" />
+                </div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <p className="eyebrow eyebrow-line mb-5">Stay informed</p>
+                  <h2 className="text-2xl sm:text-3xl text-nav-text mb-4">
+                    {llpNewsletter.heading}
+                  </h2>
+                  <p className="text-white/60 leading-relaxed mb-8">
+                    {llpNewsletter.body}
+                  </p>
+                  <a
+                    href={llpNewsletter.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-filled mt-auto self-start"
+                  >
+                    {llpNewsletter.cta} ↗
+                  </a>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
         </div>
       </section>
     </>

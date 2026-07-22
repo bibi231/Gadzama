@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import RevealOnScroll from "@/components/RevealOnScroll";
+import CVList from "@/components/CVList";
 import { arbitrationCV } from "@/content/cv";
 
 export const metadata: Metadata = {
@@ -44,35 +44,7 @@ export default function ArbitrationCVPage() {
       {/* CV Body */}
       <section className="py-16 md:py-24 bg-bg">
         <div className="section-container max-w-4xl">
-          {arbitrationCV.map((section) => (
-            <RevealOnScroll key={section.heading} className="mb-16">
-              <p className="eyebrow mb-4">{section.heading}</p>
-              <div className="border-t border-hairline">
-                {section.entries.map((entry, i) => (
-                  <div
-                    key={i}
-                    className="py-5 border-b border-hairline flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1"
-                  >
-                    <div>
-                      <p className="text-text font-semibold text-[15px]">
-                        {entry.title}
-                      </p>
-                      {entry.institution && (
-                        <p className="text-text-muted text-sm">
-                          {entry.institution}
-                        </p>
-                      )}
-                    </div>
-                    {entry.year && (
-                      <span className="text-text-muted text-sm shrink-0 sm:text-right">
-                        {entry.year}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </RevealOnScroll>
-          ))}
+          <CVList sections={arbitrationCV} />
         </div>
       </section>
     </>

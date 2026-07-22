@@ -4,3 +4,5 @@ node_modules
 build.log
 *.tsbuildinfo
 .fuse_hidden*
+/public/images/chief-cutout.png
+/public/images/chief-cutout.png.png

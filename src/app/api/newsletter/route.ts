@@ -1,23 +1,21 @@
 import { NextResponse } from "next/server";
 
-// Contact form handler.
-// Delivers enquiries by email using Resend (https://resend.com) via its REST API,
-// so no extra npm dependency is required. Set these environment variables in
-// Vercel / .env.local:
+// Newsletter subscription handler.
+// Notifies the office by email using Resend (same setup as the contact form).
+// Environment variables (set in Vercel / .env.local):
 //   RESEND_API_KEY   - your Resend API key
-//   CONTACT_TO       - inbox that should receive enquiries (e.g. Chief's office)
-//   CONTACT_FROM     - a verified sender, e.g. "Gadzama Website <enquiries@gadzama.com>"
-//
-// The visitor's email is set as reply-to, so replying to the notification email
-// goes straight back to them.
+//   CONTACT_TO       - inbox that should receive subscriptions
+//   CONTACT_FROM     - a verified sender
+// Until a database is connected, subscribers are captured via email notification.
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { email, source } = await req.json();
 
-    if (!name || !email || !message) {
+    const valid = typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!valid) {
       return NextResponse.json(
-        { error: "Please complete all fields." },
+        { error: "Please enter a valid email address." },
         { status: 400 }
       );
     }
@@ -28,14 +26,9 @@ export async function POST(req: Request) {
       process.env.CONTACT_FROM || "Gadzama Website <onboarding@resend.dev>";
 
     if (!apiKey) {
-      // Fail gracefully in development / before keys are configured.
-      console.warn("Contact form submission (email not configured):", {
-        name,
-        email,
-        message,
-      });
+      console.warn("Newsletter signup (email not configured):", { email, source });
       return NextResponse.json(
-        { error: "Email service not yet configured on the server." },
+        { error: "Subscriptions are not yet configured on the server." },
         { status: 503 }
       );
     }
@@ -50,18 +43,14 @@ export async function POST(req: Request) {
         from,
         to: [to],
         reply_to: email,
-        subject: `New enquiry from ${name}, gadzama.com`,
+        subject: "New newsletter subscriber, gadzama.com",
         html: `
           <div style="font-family:Inter,Arial,sans-serif;color:#1C2433">
-            <h2 style="color:#0F1E3D">New website enquiry</h2>
-            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <h2 style="color:#0F1E3D">New newsletter subscriber</h2>
             <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-            <p><strong>Message:</strong></p>
-            <p style="white-space:pre-wrap;border-left:3px solid #C2A14D;padding-left:12px">${escapeHtml(
-              message
-            )}</p>
+            <p><strong>Signed up from:</strong> ${escapeHtml(source || "website")}</p>
             <hr style="border:none;border-top:1px solid #E2DBCB;margin:20px 0"/>
-            <p style="font-size:12px;color:#6B7385">Sent from the contact form at www.gadzama.com</p>
+            <p style="font-size:12px;color:#6B7385">Captured on www.gadzama.com</p>
           </div>`,
       }),
     });
@@ -70,14 +59,14 @@ export async function POST(req: Request) {
       const detail = await res.text();
       console.error("Resend error:", detail);
       return NextResponse.json(
-        { error: "Could not send your message. Please try again later." },
+        { error: "Could not complete your subscription. Please try again." },
         { status: 502 }
       );
     }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Contact route error:", err);
+    console.error("Newsletter route error:", err);
     return NextResponse.json({ error: "Unexpected error." }, { status: 500 });
   }
 }

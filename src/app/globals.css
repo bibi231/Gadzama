@@ -442,3 +442,57 @@ h1, h2, h3, h4, h5 {
   background: var(--accent-glow);
   filter: blur(80px);
 }
+
+/* ==============================================================================
+   GLOW ROWS (awards, CV entries) - hover highlight with growing gold rule
+   ============================================================================== */
+.glow-row {
+  position: relative;
+  border-radius: 6px;
+  transition: background-color 0.4s ease,
+              transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease;
+}
+.glow-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.glow-row:hover {
+  background: var(--accent-glow);
+  transform: translateX(6px);
+  box-shadow: 0 12px 34px rgba(15, 30, 61, 0.07);
+}
+.glow-row:hover::before { transform: scaleY(1); }
+
+.year-badge {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+  transition: color 0.35s ease, transform 0.35s ease;
+}
+.glow-row:hover .year-badge { color: var(--accent); transform: translateY(-1px); }
+
+.glow-title { transition: color 0.35s ease; }
+.glow-row:hover .glow-title { color: var(--accent-deep); }
+
+/* Small diamond marker that lights up on hover */
+.glow-mark {
+  color: var(--accent-light);
+  transition: color 0.35s ease, transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  display: inline-block;
+}
+.glow-row:hover .glow-mark { color: var(--accent); transform: rotate(45deg) scale(1.1); }
+
+/* Image feature zoom wrapper */
+.zoom-img { overflow: hidden; }
+.zoom-img img { transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1); }
+.zoom-img:hover img { transform: scale(1.05); }

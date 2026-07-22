@@ -68,41 +68,46 @@ export default function HomePage() {
 
         {/* MOBILE / TABLET portrait: sits BEHIND the text, enlarged, head visible.
             Hidden on desktop, where the grid version below is used instead. */}
-        <div className="lg:hidden pointer-events-none absolute inset-x-0 top-0 bottom-0 z-[1]" aria-hidden>
+        <div className="xl:hidden pointer-events-none absolute inset-x-0 top-0 bottom-0 z-[1]" aria-hidden>
           <Image
-            src="/images/chief-hero-cut.png"
+            src="/images/chief-hero-cut-mobile.png"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-contain object-top scale-[1.55] sm:scale-[1.3] origin-top [object-position:center_top]"
+            className="object-contain object-top scale-[1.12] sm:scale-[0.92] md:scale-[0.82] origin-top [object-position:center_top] drop-shadow-[0_18px_30px_rgba(0,0,0,0.5)]"
           />
           {/* scrim so the overlaid copy stays legible */}
-          <div className="absolute inset-0 bg-gradient-to-b from-hero-bg/20 via-hero-bg/45 to-hero-bg" />
+          <div className="absolute inset-0 bg-gradient-to-b from-hero-bg/10 via-hero-bg/40 to-hero-bg" />
         </div>
 
         <div className="section-container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end min-h-[82vh] lg:min-h-[100vh]">
-            {/* DESKTOP portrait: side-by-side grid column */}
-            <div className="hidden lg:block relative lg:col-span-6 h-[92vh] self-end lg:-ml-6">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-end min-h-[82vh] xl:min-h-[100vh]">
+            {/* DESKTOP portrait: side-by-side grid column (xl and up) */}
+            <div className="hidden xl:block relative xl:col-span-6 h-[92vh] self-end xl:-ml-6">
+              {/* soft grounding shadow behind him on the right for immersion */}
+              <div
+                className="absolute inset-0 [background:radial-gradient(55%_46%_at_60%_80%,rgba(0,0,0,0.5),transparent_72%)]"
+                aria-hidden
+              />
               <Image
                 src="/images/chief-hero-cut.png"
                 alt="Chief Joe-Kyari Gadzama, OFR, SAN"
                 fill
                 priority
                 sizes="52vw"
-                className="object-contain object-bottom scale-[1.3] origin-bottom drop-shadow-[26px_16px_34px_rgba(0,0,0,0.55)] [object-position:center_bottom]"
+                className="object-contain object-bottom scale-[1.3] origin-bottom drop-shadow-[34px_20px_46px_rgba(0,0,0,0.62)] [object-position:center_bottom]"
               />
             </div>
 
             {/* Copy: on mobile it is pushed down so his head shows above it */}
-            <div className="lg:col-span-6 relative z-10 pt-[52vw] sm:pt-[40vw] pb-6 lg:py-24 lg:pt-24 lg:pl-6 animate-fadeIn [text-shadow:0_1px_24px_rgba(6,12,26,0.7)]">
-              <p className="eyebrow eyebrow-line mb-5 lg:mb-7 !text-[#E0C979]">
+            <div className="xl:col-span-6 relative z-10 pt-[58vw] sm:pt-[46vw] md:pt-[40vw] pb-6 xl:py-24 xl:pt-24 xl:pl-6 animate-fadeIn [text-shadow:0_1px_24px_rgba(6,12,26,0.7)]">
+              <p className="eyebrow eyebrow-line mb-5 xl:mb-7 !text-[#E0C979]">
                 Senior Advocate of Nigeria · Chartered Arbitrator
               </p>
 
               <h1
-                className="text-white font-bold text-5xl sm:text-6xl lg:text-[80px] leading-[1.03] mb-5 lg:mb-6"
+                className="text-white font-bold text-5xl sm:text-6xl xl:text-[80px] leading-[1.03] mb-5 xl:mb-6"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Joe-Kyari{" "}
@@ -118,13 +123,13 @@ export default function HomePage() {
                 OFR, SAN, Life Bencher, FCIArb, C.Arb.
               </p>
 
-              <p className="text-white/85 leading-relaxed max-w-xl mb-8 lg:mb-10 font-medium text-sm sm:text-base">
+              <p className="text-white/85 leading-relaxed max-w-xl mb-8 xl:mb-10 font-medium text-sm sm:text-base">
                 Founding Principal Partner of J-K Gadzama LLP. Four decades at
                 the Nigerian Bar, resolving complex commercial disputes through
                 arbitration, mediation and advocacy of the highest order.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-16 lg:mb-0">
+              <div className="flex flex-wrap gap-4 mb-16 xl:mb-0">
                 <Link href="/cv/arbitration-adr" className="btn-filled">
                   Arbitration &amp; ADR CV
                 </Link>
