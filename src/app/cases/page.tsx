@@ -20,7 +20,7 @@ export default function CasesPage() {
         subtitle={caseIntro}
       />
 
-      <section className="bg-surface border-b border-hairline py-14 bg-pattern-lattice">
+      <section className="bg-surface border-b border-hairline py-14">
         <div className="section-container">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -40,7 +40,7 @@ export default function CasesPage() {
               <div className="lg:col-span-9">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
-                    { num: "40", label: "Years at the Bar" },
+                    { num: "40+", label: "Years at the Bar" },
                     { num: "15+", label: "Landmark Cases" },
                     { num: "4", label: "Superior Court Levels" },
                     { num: "3", label: "International Jurisdictions" },
@@ -91,7 +91,7 @@ export default function CasesPage() {
         </div>
       </section>
 
-      <section className="bg-hero-bg relative overflow-hidden grain py-20 bg-pattern-grid-fine">
+      <section className="bg-hero-bg relative overflow-hidden grain py-20">
         <div className="section-container relative z-10">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

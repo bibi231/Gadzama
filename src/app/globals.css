@@ -497,36 +497,6 @@ h1, h2, h3, h4, h5 {
 .zoom-img img { transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1); }
 .zoom-img:hover img { transform: scale(1.05); }
 
-/* ==============================================================================
-   BACKGROUND PATTERNS & SVG WATERMARKS
-   ============================================================================== */
-.bg-pattern-lattice {
-  background-image: radial-gradient(circle at 1px 1px, rgba(194, 161, 77, 0.12) 1px, transparent 0);
-  background-size: 32px 32px;
-}
-
-.bg-pattern-grid-fine {
-  background-image: 
-    linear-gradient(to right, rgba(194, 161, 77, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(194, 161, 77, 0.08) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.bg-pattern-guilloche {
-  background-image: radial-gradient(circle, rgba(194, 161, 77, 0.09) 10%, transparent 11%);
-  background-size: 24px 24px;
-}
-
-.bg-pattern-stripes {
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 18px,
-    rgba(194, 161, 77, 0.035) 18px,
-    rgba(194, 161, 77, 0.035) 19px
-  );
-}
-
 .card-luxury {
   background: var(--card-bg);
   border: 1px solid var(--card-border);

@@ -26,7 +26,7 @@ export default function AboutPage() {
         subtitle={aboutContent.subtitle}
       />
 
-      <section className="py-16 md:py-24 bg-bg bg-pattern-lattice">
+      <section className="py-16 md:py-24 bg-bg">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2">

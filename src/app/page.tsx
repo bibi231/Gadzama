@@ -152,35 +152,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 lg:py-32 relative overflow-hidden bg-pattern-lattice">
-        <div className="section-container relative z-10">
+      <section className="bg-bg py-24 lg:py-32">
+        <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <div className="lg:col-span-4 relative">
-              <div className="pointer-events-none absolute -left-6 -top-8 w-60 h-60 opacity-[0.07] text-navy select-none" aria-hidden>
-                <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="100" y1="20" x2="100" y2="170" strokeWidth="6"/>
-                  <line x1="60" y1="170" x2="140" y2="170" strokeWidth="6"/>
-                  <line x1="30" y1="55" x2="170" y2="55" strokeWidth="6"/>
-                  <circle cx="100" cy="20" r="8" fill="currentColor"/>
-                  <path d="M30 55 L15 115 Q30 130 45 115 Z" fill="currentColor" fillOpacity="0.2"/>
-                  <line x1="30" y1="55" x2="15" y2="115"/>
-                  <line x1="30" y1="55" x2="45" y2="115"/>
-                  <path d="M170 55 L155 115 Q170 130 185 115 Z" fill="currentColor" fillOpacity="0.2"/>
-                  <line x1="170" y1="55" x2="155" y2="115"/>
-                  <line x1="170" y1="55" x2="185" y2="115"/>
-                </svg>
-              </div>
+            <div className="lg:col-span-4">
               <RevealOnScroll>
                 <p className="eyebrow eyebrow-line mb-6 font-bold">The Practitioner</p>
                 <p
                   className="font-display font-bold leading-none text-navy select-none"
                   style={{ fontSize: "clamp(72px, 10vw, 132px)" }}
                 >
-                  40
+                  40<span className="text-accent-deep">+</span>
                 </p>
                 <p className="text-navy font-semibold text-base mt-3 tracking-wide">
                   years at the Nigerian Bar
                 </p>
+
+                <div className="mt-8 pt-6 border-t border-hairline grid grid-cols-2 gap-4 max-w-xs">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
+                      Called to Bar
+                    </p>
+                    <p className="font-display text-lg text-navy font-bold mt-1">
+                      1986
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
+                      SAN Elevation
+                    </p>
+                    <p className="font-display text-lg text-navy font-bold mt-1">
+                      1998
+                    </p>
+                  </div>
+                </div>
               </RevealOnScroll>
             </div>
             <div className="lg:col-span-8">
@@ -250,7 +255,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-hero-bg relative overflow-hidden grain py-24 lg:py-28 bg-pattern-grid-fine">
+      <section className="bg-hero-bg relative overflow-hidden grain py-24 lg:py-28">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <div className="bokeh top-[-30px] left-[10%] w-64 h-64 bg-accent/[0.10]" />
           <div className="bokeh bottom-[-40px] right-[12%] w-72 h-72 bg-accent/[0.08]" />
@@ -297,7 +302,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 lg:py-32 relative overflow-hidden bg-pattern-stripes">
+      <section className="bg-bg py-24 lg:py-32">
         <div className="section-container relative z-10">
           <RevealOnScroll>
             <div className="max-w-3xl mx-auto text-center">
@@ -317,7 +322,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-surface border-t border-hairline py-24 lg:py-28 bg-pattern-lattice">
+      <section className="bg-surface border-t border-hairline py-24 lg:py-28">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[

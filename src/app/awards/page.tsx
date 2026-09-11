@@ -19,7 +19,7 @@ export default function AwardsPage() {
         subtitle={awardsIntro}
       />
 
-      <section className="bg-surface border-b border-hairline bg-pattern-lattice">
+      <section className="bg-surface border-b border-hairline">
         <div className="section-container py-0">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-2">

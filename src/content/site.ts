@@ -6,7 +6,7 @@ export const siteConfig = {
   domain: "gadzama.com",
   url: "https://www.gadzama.com",
   description:
-    "Official website of Chief Joe-Kyari Gadzama, OFR, SAN, a distinguished Senior Advocate of Nigeria, Chartered Arbitrator, and leading ADR practitioner with 40 years at the Bar.",
+    "Official website of Chief Joe-Kyari Gadzama, OFR, SAN, a distinguished Senior Advocate of Nigeria, Chartered Arbitrator, and leading ADR practitioner with 40+ years at the Bar.",
   builtBy: "TrueWeb Solutions",
   builtByUrl: "https://www.truewebsolutions.com",
 };
@@ -24,7 +24,7 @@ export const identity = {
 };
 
 export const stats = [
-  { value: "40", label: "Years at the Bar" },
+  { value: "40+", label: "Years at the Bar" },
   { value: "26+", label: "Years as SAN" },
   { value: "C.Arb.", label: "Chartered Arbitrator" },
   { value: "500", label: "Leading Lawyers Worldwide" },
