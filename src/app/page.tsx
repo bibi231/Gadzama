@@ -45,53 +45,45 @@ const authorityAreas = [
 export default function HomePage() {
   return (
     <>
-      {/* ================= HERO ================= */}
       <section
         id="hero"
         className="relative bg-hero-bg overflow-hidden grain"
       >
-        {/* Bokeh photographic backdrop */}
         <div className="absolute inset-0" aria-hidden>
           <Image
-            src="/images/hero-bokeh.jpg"
+            src="/images/hero-bokeh.webp"
             alt=""
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
-          {/* navy tints for depth + text legibility on the right */}
           <div className="absolute inset-0 bg-hero-bg/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-hero-bg/20 via-hero-bg/45 to-hero-bg/90" />
           <div className="absolute inset-0 bg-gradient-to-t from-hero-bg via-transparent to-transparent" />
         </div>
 
-        {/* MOBILE / TABLET portrait: sits BEHIND the text, enlarged, head visible.
-            Hidden on desktop, where the grid version below is used instead. */}
         <div className="xl:hidden pointer-events-none absolute inset-x-0 top-0 bottom-0 z-[1]" aria-hidden>
           <Image
-            src="/images/chief-hero-cut-mobile.png"
+            src="/images/chief-hero-cut-mobile.webp"
             alt=""
             fill
             priority
             sizes="100vw"
             className="object-contain object-top scale-[1.12] sm:scale-[0.92] md:scale-[0.82] origin-top [object-position:center_top] drop-shadow-[0_18px_30px_rgba(0,0,0,0.5)]"
           />
-          {/* scrim so the overlaid copy stays legible */}
           <div className="absolute inset-0 bg-gradient-to-b from-hero-bg/10 via-hero-bg/40 to-hero-bg" />
         </div>
 
         <div className="section-container relative z-10">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-end min-h-[82vh] xl:min-h-[100vh]">
-            {/* DESKTOP portrait: side-by-side grid column (xl and up) */}
             <div className="hidden xl:block relative xl:col-span-6 h-[92vh] self-end xl:-ml-6">
-              {/* soft grounding shadow behind him on the right for immersion */}
               <div
                 className="absolute inset-0 [background:radial-gradient(55%_46%_at_60%_80%,rgba(0,0,0,0.5),transparent_72%)]"
                 aria-hidden
               />
               <Image
-                src="/images/chief-hero-cut.png"
+                src="/images/chief-hero-cut.webp"
                 alt="Chief Joe-Kyari Gadzama, OFR, SAN"
                 fill
                 priority
@@ -100,7 +92,6 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Copy: on mobile it is pushed down so his head shows above it */}
             <div className="xl:col-span-6 relative z-10 pt-[58vw] sm:pt-[46vw] md:pt-[40vw] pb-6 xl:py-24 xl:pt-24 xl:pl-6 animate-fadeIn [text-shadow:0_1px_24px_rgba(6,12,26,0.7)]">
               <p className="eyebrow eyebrow-line mb-5 xl:mb-7 !text-[#E0C979]">
                 Senior Advocate of Nigeria · Chartered Arbitrator
@@ -142,8 +133,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= CREDENTIAL MARQUEE ================= */}
-      <section
+            <section
         className="bg-navy-deep border-t border-navy-line overflow-hidden py-5"
         aria-label="Credentials"
       >
@@ -162,18 +152,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= INTRO STATEMENT ================= */}
-      <section className="bg-bg py-24 lg:py-32">
-        <div className="section-container">
+      <section className="bg-bg py-24 lg:py-32 relative overflow-hidden bg-pattern-lattice">
+        <div className="section-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4 relative">
+              <div className="pointer-events-none absolute -left-6 -top-8 w-60 h-60 opacity-[0.07] text-navy select-none" aria-hidden>
+                <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="100" y1="20" x2="100" y2="170" strokeWidth="6"/>
+                  <line x1="60" y1="170" x2="140" y2="170" strokeWidth="6"/>
+                  <line x1="30" y1="55" x2="170" y2="55" strokeWidth="6"/>
+                  <circle cx="100" cy="20" r="8" fill="currentColor"/>
+                  <path d="M30 55 L15 115 Q30 130 45 115 Z" fill="currentColor" fillOpacity="0.2"/>
+                  <line x1="30" y1="55" x2="15" y2="115"/>
+                  <line x1="30" y1="55" x2="45" y2="115"/>
+                  <path d="M170 55 L155 115 Q170 130 185 115 Z" fill="currentColor" fillOpacity="0.2"/>
+                  <line x1="170" y1="55" x2="155" y2="115"/>
+                  <line x1="170" y1="55" x2="185" y2="115"/>
+                </svg>
+              </div>
               <RevealOnScroll>
                 <p className="eyebrow eyebrow-line mb-6 font-bold">The Practitioner</p>
                 <p
                   className="font-display font-bold leading-none text-navy select-none"
                   style={{ fontSize: "clamp(72px, 10vw, 132px)" }}
                 >
-                  38<span className="text-accent-deep">+</span>
+                  40
                 </p>
                 <p className="text-navy font-semibold text-base mt-3 tracking-wide">
                   years at the Nigerian Bar
@@ -207,7 +210,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= AREAS OF AUTHORITY (numbered rows) ================= */}
       <section className="bg-surface border-y border-hairline py-24 lg:py-28">
         <div className="section-container">
           <RevealOnScroll>
@@ -248,8 +250,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= JICAM FEATURE ================= */}
-      <section className="bg-hero-bg relative overflow-hidden grain py-24 lg:py-28">
+      <section className="bg-hero-bg relative overflow-hidden grain py-24 lg:py-28 bg-pattern-grid-fine">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <div className="bokeh top-[-30px] left-[10%] w-64 h-64 bg-accent/[0.10]" />
           <div className="bokeh bottom-[-40px] right-[12%] w-72 h-72 bg-accent/[0.08]" />
@@ -264,7 +265,7 @@ export default function HomePage() {
                 <h2 className="text-nav-text text-4xl sm:text-5xl mb-6">
                   JICAM
                 </h2>
-                <p className="text-white/60 leading-relaxed max-w-2xl mb-8">
+                <p className="text-white/75 leading-relaxed max-w-2xl mb-8">
                   The Janada International Centre for Arbitration and Mediation,
                   established 2015, is a leading neutral venue for domestic and
                   international commercial disputes. Chief J-K Gadzama, SAN
@@ -273,7 +274,7 @@ export default function HomePage() {
                   professionals.
                 </p>
                 <a
-                  href="#"
+                  href="https://www.j-kgadzamallp.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="arrow-link"
@@ -284,9 +285,9 @@ export default function HomePage() {
             </div>
             <div className="lg:col-span-4">
               <RevealOnScroll>
-                <div className="border border-accent/30 p-10 text-center">
+                <div className="border border-accent/40 bg-navy-deep/60 backdrop-blur-xs p-10 text-center shadow-lg">
                   <p className="font-display text-accent text-6xl mb-2">2015</p>
-                  <p className="text-white/50 text-xs uppercase tracking-[0.2em]">
+                  <p className="text-white/70 text-xs uppercase tracking-[0.2em]">
                     Established · Abuja
                   </p>
                 </div>
@@ -296,9 +297,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= PULL QUOTE ================= */}
-      <section className="bg-bg py-24 lg:py-32">
-        <div className="section-container">
+      <section className="bg-bg py-24 lg:py-32 relative overflow-hidden bg-pattern-stripes">
+        <div className="section-container relative z-10">
           <RevealOnScroll>
             <div className="max-w-3xl mx-auto text-center">
               <span
@@ -317,8 +317,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= EXPLORE CARDS ================= */}
-      <section className="bg-surface border-t border-hairline py-24 lg:py-28">
+      <section className="bg-surface border-t border-hairline py-24 lg:py-28 bg-pattern-lattice">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -343,9 +342,9 @@ export default function HomePage() {
             ].map((card) => (
               <RevealOnScroll key={card.title}>
                 <Link href={card.href} className="block h-full">
-                  <div className="card card-accent-top h-full flex flex-col justify-between min-h-[230px]">
+                  <div className="card-luxury card-accent-top h-full flex flex-col justify-between min-h-[230px] p-8 md:p-10 shadow-sm hover:shadow-xl">
                     <div>
-                      <h3 className="text-2xl text-text mb-4">{card.title}</h3>
+                      <h3 className="text-2xl text-text mb-4 font-bold">{card.title}</h3>
                       <p className="text-text-muted text-sm leading-relaxed">
                         {card.text}
                       </p>

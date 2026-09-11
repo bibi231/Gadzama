@@ -33,8 +33,7 @@ export default function CookieConsent() {
       className="fixed z-[90] bottom-4 left-4 right-4 sm:right-auto sm:max-w-md animate-fadeIn"
     >
       <div className="relative bg-navy-deep text-white rounded-xl border border-navy-line shadow-[0_24px_70px_rgba(0,0,0,0.5)] overflow-hidden">
-        {/* gold accent edge */}
-        <div className="h-1 bg-gradient-to-r from-accent-deep via-accent to-accent-deep" />
+                <div className="h-1 bg-gradient-to-r from-accent-deep via-accent to-accent-deep" />
         <div className="p-5 sm:p-6">
           <div className="flex items-start gap-4">
             <span className="shrink-0 w-11 h-11 rounded-full bg-accent/15 text-accent flex items-center justify-center">

@@ -1,4 +1,4 @@
-// ─── About page content ──────────────────────────────────────────────────────
+
 
 export const aboutContent = {
   headline: "Chief Joe-Kyari Gadzama, OFR, SAN",
@@ -49,7 +49,7 @@ export const aboutContent = {
     "Okwuluora of Ukpo and Igboland (2003)",
   ],
 
-  // ── Professional Associations ──────────────────────────────────────────────
+  
   // URLs point to the most specific publicly-available page that references him
   // or, where no such page exists, to the body's main site.
   professionalAssociations: [
@@ -87,7 +87,7 @@ export const aboutContent = {
     },
   ] as { name: string; url: string }[],
 
-  // ── ADR Memberships & Positions ────────────────────────────────────────────
+  
   adrMemberships: [
     {
       name: "Founder & Chair, Board of Trustees, JICAM, Abuja",

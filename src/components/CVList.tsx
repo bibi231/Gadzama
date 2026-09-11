@@ -46,9 +46,7 @@ export default function CVList({ sections }: { sections: CVSection[] }) {
                     ◆
                   </span>
                   <div>
-                    {/* If there is an institution, the title is plain and the
-                        institution carries the link; otherwise the title links. */}
-                    {entry.institution ? (
+                                        {entry.institution ? (
                       <p className="glow-title text-text font-semibold text-[15px]">
                         {entry.title}
                       </p>

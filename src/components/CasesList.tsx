@@ -11,8 +11,7 @@ export default function CasesList() {
 
   return (
     <>
-      {/* Filter tabs */}
-      <div className="flex flex-wrap gap-2 mb-12">
+            <div className="flex flex-wrap gap-2 mb-12">
         {caseCategories.map((cat) => (
           <button
             key={cat}
@@ -28,8 +27,7 @@ export default function CasesList() {
         ))}
       </div>
 
-      {/* Cases grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filtered.map((c) => (
           <RevealOnScroll key={c.title}>
             <article className="card card-accent-top h-full flex flex-col">

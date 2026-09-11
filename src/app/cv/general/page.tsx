@@ -17,8 +17,7 @@ export default function GeneralCVPage() {
         eyebrow="Curriculum Vitae"
         title="General CV"
       >
-        {/* Tab toggle + Download */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex">
             <Link
               href="/cv/arbitration-adr"
@@ -41,8 +40,7 @@ export default function GeneralCVPage() {
         </div>
       </PageHeader>
 
-      {/* CV Body */}
-      <section className="py-16 md:py-24 bg-bg">
+            <section className="py-16 md:py-24 bg-bg">
         <div className="section-container max-w-4xl">
           <CVList sections={generalCV} />
         </div>

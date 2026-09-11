@@ -1,4 +1,4 @@
-// ─── CV data ─────────────────────────────────────────────────────────────────
+
 
 export interface CVEntry {
   title: string;
@@ -12,7 +12,7 @@ export interface CVSection {
   entries: CVEntry[];
 }
 
-// ─── Arbitration & ADR CV ────────────────────────────────────────────────────
+
 export const arbitrationCV: CVSection[] = [
   {
     heading: "Education & Qualifications",
@@ -136,7 +136,7 @@ export const arbitrationCV: CVSection[] = [
   },
 ];
 
-// ─── General CV ──────────────────────────────────────────────────────────────
+
 export const generalCV: CVSection[] = [
   {
     heading: "Education & Qualifications",

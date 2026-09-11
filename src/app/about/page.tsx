@@ -26,31 +26,27 @@ export default function AboutPage() {
         subtitle={aboutContent.subtitle}
       />
 
-      {/* ═══ PROFILE ═══════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-bg">
+      <section className="py-16 md:py-24 bg-bg bg-pattern-lattice">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Portrait (left, 2 cols) */}
             <div className="lg:col-span-2">
               <RevealOnScroll>
                 <div className="relative">
-                  <div className="relative w-full aspect-[3/4] rounded overflow-hidden bg-surface2">
+                  <div className="relative w-full aspect-[3/4] rounded overflow-hidden bg-surface2 shadow-xl border border-accent/20">
                     <Image
-                      src="/images/chief-about.jpg"
+                      src="/images/chief-about.webp"
                       alt="Chief Joe-Kyari Gadzama, OFR, SAN"
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover object-top"
                     />
                   </div>
-                  {/* Gold accent bar */}
                   <div className="absolute left-0 top-8 bottom-8 w-1 bg-accent rounded-full" />
                 </div>
               </RevealOnScroll>
             </div>
 
-            {/* Profile prose (right, 3 cols) */}
-            <div className="lg:col-span-3">
+                        <div className="lg:col-span-3">
               <RevealOnScroll>
                 <div className="space-y-6">
                   {aboutContent.profileParagraphs.map((para, i) => (
@@ -61,8 +57,7 @@ export default function AboutPage() {
                 </div>
               </RevealOnScroll>
 
-              {/* Pull quote */}
-              <RevealOnScroll className="mt-10">
+                            <RevealOnScroll className="mt-10">
                 <blockquote className="pull-quote">
                   &ldquo;{aboutContent.pullQuote}&rdquo;
                 </blockquote>
@@ -72,8 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══ RECOGNITION STRIP ══════════════════════════════════════════════ */}
-      <section className="bg-hero-bg border-y border-navy-line py-14">
+            <section className="bg-hero-bg border-y border-navy-line py-14">
         <div className="section-container">
           <RevealOnScroll>
             <p className="eyebrow text-center mb-10">International Recognition</p>
@@ -94,28 +88,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══ ROBE PHOTO BREAK ════════════════════════════════════════════════ */}
       <section className="bg-bg py-16 md:py-24">
         <div className="section-container">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Photo */}
               <div className="lg:col-span-5 order-2 lg:order-1">
-                <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <div className="relative w-full aspect-[4/5] overflow-hidden shadow-xl border border-accent/20">
                   <Image
-                    src="/images/gallery/g5.jpg"
+                    src="/images/gallery/g5.webp"
                     alt="Chief Joe-Kyari Gadzama in legal robes"
                     fill
                     sizes="(max-width: 1024px) 100vw, 42vw"
                     className="object-cover object-top"
                   />
-                  {/* Decorative gold corner */}
                   <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-accent" />
                 </div>
               </div>
 
-              {/* Text */}
-              <div className="lg:col-span-7 order-1 lg:order-2">
+                            <div className="lg:col-span-7 order-1 lg:order-2">
                 <p className="eyebrow eyebrow-line mb-6">A Record of Firsts</p>
                 <h2 className="text-3xl sm:text-4xl text-text mb-6">
                   The first{" "}
@@ -150,8 +140,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══ NATIONAL HONOURS & TITLES ═════════════════════════════════════ */}
-      <section className="py-16 bg-surface border-y border-hairline">
+            <section className="py-16 bg-surface border-y border-hairline">
         <div className="section-container">
           <RevealOnScroll>
             <p className="eyebrow mb-6">National Honours &amp; Titles</p>
@@ -169,8 +158,7 @@ export default function AboutPage() {
               ))}
             </div>
 
-            {/* Traditional titles */}
-            {aboutContent.traditionalTitles.length > 0 && (
+                        {aboutContent.traditionalTitles.length > 0 && (
               <p className="mt-4 text-text-muted text-sm">
                 Traditional titles:{" "}
                 {aboutContent.traditionalTitles.join(" · ")}
@@ -180,12 +168,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══ ASSOCIATIONS & ADR ═════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-bg">
+            <section className="py-16 md:py-24 bg-bg">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Professional Associations */}
-            <RevealOnScroll>
+                        <RevealOnScroll>
               <p className="eyebrow eyebrow-line mb-6">Professional Associations</p>
               <ul className="divide-y divide-hairline">
                 {aboutContent.professionalAssociations.map((a) => (
@@ -206,8 +192,7 @@ export default function AboutPage() {
               </ul>
             </RevealOnScroll>
 
-            {/* ADR Memberships */}
-            <RevealOnScroll>
+                        <RevealOnScroll>
               <p className="eyebrow eyebrow-line mb-6">ADR Memberships &amp; Positions</p>
               <ul className="divide-y divide-hairline">
                 {aboutContent.adrMemberships.map((m) => (
@@ -231,15 +216,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ═══ BOOKSHELF / SCHOLAR PHOTO CODA ════════════════════════════════ */}
       <section className="bg-surface border-t border-hairline overflow-hidden">
         <div className="section-container py-0">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Photo, full bleed on right */}
               <div className="relative h-64 lg:h-auto lg:min-h-[380px] order-2 lg:order-1">
                 <Image
-                  src="/images/gallery/g3-bookshelf.jpg"
+                  src="/images/gallery/g3-bookshelf.webp"
                   alt="Chief Gadzama in his chamber"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -248,8 +231,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/70 hidden lg:block" />
               </div>
 
-              {/* Text */}
-              <div className="order-1 lg:order-2 flex items-center py-16 px-0 lg:pl-14">
+                            <div className="order-1 lg:order-2 flex items-center py-16 px-0 lg:pl-14">
                 <div>
                   <p className="eyebrow eyebrow-line mb-6">Scholar &amp; Teacher</p>
                   <h2 className="text-3xl sm:text-4xl text-text mb-6">

@@ -1,4 +1,4 @@
-// ─── Honours, Awards & Titles ────────────────────────────────────────────────
+
 
 export interface AwardGroup {
   group: string;

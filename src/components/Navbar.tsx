@@ -49,8 +49,7 @@ export default function Navbar() {
       style={{ height: scrolled ? 72 : 80 }}
     >
       <div className="section-container h-full flex items-center justify-between">
-        {/* Logo / Wordmark: ruled serif mark (matches the firm identity) */}
-        <Link href="/" className="flex items-center gap-3 group" id="logo-link">
+                <Link href="/" className="flex items-center gap-3 group" id="logo-link">
           <span className="block w-[3px] h-9 bg-accent transition-all duration-300 group-hover:h-10" />
           <span
             className="leading-none text-nav-text"
@@ -63,8 +62,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden lg:flex items-center gap-1">
+                <div className="hidden lg:flex items-center gap-1">
           {navigation.map((item) =>
             item.children ? (
               <div
@@ -88,8 +86,7 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </Link>
-                {/* Dropdown */}
-                <div
+                                <div
                   className={`absolute top-full left-0 mt-1 bg-surface2 border border-hairline rounded shadow-xl min-w-[220px] transition-all duration-200 ${
                     openDropdown === item.label
                       ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -140,8 +137,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
+                <button
           id="mobile-menu-toggle"
           className="lg:hidden text-nav-text p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,8 +154,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div
+            <div
         className={`lg:hidden overflow-hidden transition-all duration-300 bg-nav-bg border-t border-hairline ${
           mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}

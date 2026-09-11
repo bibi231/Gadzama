@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
 /* ==============================================================================
    GADZAMA.COM - DESIGN SYSTEM
@@ -17,7 +17,7 @@
   --accent-light: rgba(194, 161, 77, 0.2);
   --accent-glow: rgba(194, 161, 77, 0.07);
   --text: #1C2433;
-  --text-muted: #6B7385;
+  --text-muted: #475467;
   --hairline: #E2DBCB;
   --navy: #0F1E3D;
   --navy-deep: #0B182F;
@@ -496,3 +496,50 @@ h1, h2, h3, h4, h5 {
 .zoom-img { overflow: hidden; }
 .zoom-img img { transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1); }
 .zoom-img:hover img { transform: scale(1.05); }
+
+/* ==============================================================================
+   BACKGROUND PATTERNS & SVG WATERMARKS
+   ============================================================================== */
+.bg-pattern-lattice {
+  background-image: radial-gradient(circle at 1px 1px, rgba(194, 161, 77, 0.12) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.bg-pattern-grid-fine {
+  background-image: 
+    linear-gradient(to right, rgba(194, 161, 77, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 161, 77, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-pattern-guilloche {
+  background-image: radial-gradient(circle, rgba(194, 161, 77, 0.09) 10%, transparent 11%);
+  background-size: 24px 24px;
+}
+
+.bg-pattern-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 18px,
+    rgba(194, 161, 77, 0.035) 18px,
+    rgba(194, 161, 77, 0.035) 19px
+  );
+}
+
+.card-luxury {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-luxury:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px -12px rgba(15, 30, 61, 0.12), 0 0 0 1px rgba(194, 161, 77, 0.45);
+  border-color: var(--accent);
+}
+

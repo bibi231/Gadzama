@@ -17,8 +17,7 @@ export default function ArbitrationCVPage() {
         eyebrow="Curriculum Vitae"
         title="Arbitration & ADR CV"
       >
-        {/* Tab toggle + Download */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex">
             <span className="px-5 py-2 bg-accent text-btn-filled-text text-sm font-semibold tracking-wider uppercase">
               Arbitration &amp; ADR CV
@@ -41,8 +40,7 @@ export default function ArbitrationCVPage() {
         </div>
       </PageHeader>
 
-      {/* CV Body */}
-      <section className="py-16 md:py-24 bg-bg">
+            <section className="py-16 md:py-24 bg-bg">
         <div className="section-container max-w-4xl">
           <CVList sections={arbitrationCV} />
         </div>

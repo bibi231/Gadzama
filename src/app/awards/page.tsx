@@ -19,8 +19,7 @@ export default function AwardsPage() {
         subtitle={awardsIntro}
       />
 
-      {/* ─── Photo feature ────────────────────────────────────────────────── */}
-      <section className="bg-surface border-b border-hairline">
+      <section className="bg-surface border-b border-hairline bg-pattern-lattice">
         <div className="section-container py-0">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -45,13 +44,12 @@ export default function AwardsPage() {
               </div>
               <div className="zoom-img relative h-64 lg:h-auto lg:min-h-[400px]">
                 <Image
-                  src="/images/gallery/g5.jpg"
+                  src="/images/gallery/g5.webp"
                   alt="Chief Joe-Kyari Gadzama, OFR, SAN"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top"
                 />
-                {/* Gradient blend into the bg */}
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-surface/60 hidden lg:block" />
               </div>
             </div>
@@ -59,7 +57,6 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      {/* ─── Awards groups ────────────────────────────────────────────────── */}
       <section className="bg-bg py-20 lg:py-24">
         <div className="section-container">
           <div className="space-y-20">

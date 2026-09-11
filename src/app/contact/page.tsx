@@ -25,7 +25,7 @@ export default function ContactPage() {
     setStatus("sending");
     setError("");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formState),
@@ -55,11 +55,9 @@ export default function ContactPage() {
       <section className="py-16 md:py-24 bg-bg">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left: Contact info */}
-            <RevealOnScroll>
+                        <RevealOnScroll>
               <div className="space-y-4">
-                {/* Office */}
-                <a
+                                <a
                   href={mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -86,8 +84,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                {/* Phone */}
-                <a
+                                <a
                   href={telHref}
                   className="group flex gap-4 items-center p-5 bg-surface border border-hairline rounded-lg hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,30,61,0.08)] transition-all"
                 >
@@ -104,8 +101,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                {/* Email */}
-                <a
+                                <a
                   href={`mailto:${contact.email}`}
                   className="group flex gap-4 items-center p-5 bg-surface border border-hairline rounded-lg hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,30,61,0.08)] transition-all"
                 >
@@ -123,8 +119,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                {/* Connect */}
-                <div className="p-5">
+                                <div className="p-5">
                   <p className="eyebrow mb-4">Connect</p>
                   <div className="flex gap-3">
                     {socials.map((s) =>
@@ -152,8 +147,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Newsletter */}
-                <div className="p-6 bg-hero-bg rounded-lg card-accent-top relative overflow-hidden grain">
+                                <div className="p-6 bg-hero-bg rounded-lg card-accent-top relative overflow-hidden grain">
                   <div className="pointer-events-none absolute inset-0" aria-hidden>
                     <div className="bokeh top-[-20px] right-[6%] w-40 h-40 bg-accent/[0.12]" />
                   </div>
@@ -169,8 +163,7 @@ export default function ContactPage() {
               </div>
             </RevealOnScroll>
 
-            {/* Right: Enquiry form */}
-            <RevealOnScroll>
+                        <RevealOnScroll>
               <div className="card p-8">
                 <h2 className="text-2xl text-text mb-2">Send an enquiry</h2>
                 <p className="text-text-muted text-sm mb-6">
@@ -253,8 +246,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Google Map */}
-      <section className="bg-surface">
+            <section className="bg-surface">
         <div className="w-full h-[360px] border-t border-hairline">
           <iframe
             title="J-K Gadzama Court location"

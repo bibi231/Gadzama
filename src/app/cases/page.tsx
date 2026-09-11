@@ -20,31 +20,27 @@ export default function CasesPage() {
         subtitle={caseIntro}
       />
 
-      {/* ─── Advocate photo intro ──────────────────────────────────────────── */}
-      <section className="bg-surface border-b border-hairline py-14">
+      <section className="bg-surface border-b border-hairline py-14 bg-pattern-lattice">
         <div className="section-container">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Photo */}
               <div className="lg:col-span-3">
-                <div className="relative w-full aspect-[3/4] overflow-hidden">
+                <div className="relative w-full aspect-[3/4] overflow-hidden shadow-lg border border-accent/20">
                   <Image
-                    src="/images/cases-portrait.jpg"
+                    src="/images/cases-portrait.webp"
                     alt="Chief Joe-Kyari Gadzama, SAN"
                     fill
                     sizes="(max-width: 1024px) 60vw, 25vw"
                     className="object-cover object-top"
                   />
-                  {/* Gold corner decoration */}
                   <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-accent" />
                 </div>
               </div>
 
-              {/* Stats */}
               <div className="lg:col-span-9">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
-                    { num: "38+", label: "Years at the Bar" },
+                    { num: "40", label: "Years at the Bar" },
                     { num: "15+", label: "Landmark Cases" },
                     { num: "4", label: "Superior Court Levels" },
                     { num: "3", label: "International Jurisdictions" },
@@ -76,12 +72,10 @@ export default function CasesPage() {
         </div>
       </section>
 
-      {/* ─── Cases list ───────────────────────────────────────────────────── */}
       <section className="bg-bg py-20 lg:py-24">
         <div className="section-container">
           <CasesList />
 
-          {/* International recognition */}
           <RevealOnScroll>
             <div className="mt-20 border-t border-hairline pt-14">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -97,8 +91,7 @@ export default function CasesPage() {
         </div>
       </section>
 
-      {/* ─── Casual / candid photo coda ───────────────────────────────────── */}
-      <section className="bg-hero-bg relative overflow-hidden grain py-20">
+      <section className="bg-hero-bg relative overflow-hidden grain py-20 bg-pattern-grid-fine">
         <div className="section-container relative z-10">
           <RevealOnScroll>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -108,22 +101,22 @@ export default function CasesPage() {
                   Called when the{" "}
                   <span className="display-italic text-accent">stakes are highest</span>
                 </h2>
-                <p className="text-white/60 leading-relaxed">
+                <p className="text-white/70 leading-relaxed">
                   Whether defending a governor's tenure, representing a sovereign
                   national body on an election petition, or providing expert opinion
                   to a French tribunal, Chief Gadzama has been the lawyer his
                   clients and his country turn to when there is no room for error.
                 </p>
               </div>
-              <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-accent/20">
                 <Image
-                  src="/images/gallery/g4-casual.jpg"
+                  src="/images/gallery/g4-casual.webp"
                   alt="Chief Gadzama"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-hero-bg/30" />
+                <div className="absolute inset-0 bg-hero-bg/25" />
               </div>
             </div>
           </RevealOnScroll>

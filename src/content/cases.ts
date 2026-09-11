@@ -1,4 +1,4 @@
-// ─── Notable Cases & Appointments ────────────────────────────────────────────
+
 // A distinguished record of landmark legal engagements.
 
 export interface CaseEntry {

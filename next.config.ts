@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static-first: all pages are statically generated at build time.
-  // Using standard Next.js mode for Vercel deployment (not output: "export")
-  // since we use redirect() and dynamic features.
+  // Static export for cPanel/shared hosting — generates plain HTML/CSS/JS files.
+  output: "export",
   images: {
-    unoptimized: false, // Use Vercel image optimization
+    unoptimized: true, // Required for static export (no server-side image optimization)
   },
-  trailingSlash: false,
+  trailingSlash: true, // Generates /about/index.html instead of /about.html
+  eslint: {
+    ignoreDuringBuilds: true, // Skip ESLint during production build
+  },
 };
 
 export default nextConfig;

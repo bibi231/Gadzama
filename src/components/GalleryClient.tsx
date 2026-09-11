@@ -13,80 +13,80 @@ type Photo = {
 
 const photos: Photo[] = [
   {
-    src: "/images/gallery/g1-blue-suit.jpg",
+    src: "/images/gallery/.webp",
     span: "lg:col-span-2 lg:row-span-2",
     alt: "Chief Joe-Kyari Gadzama, SAN",
     caption:
       "Chief Joe-Kyari Gadzama, OFR, SAN — Senior Advocate of Nigeria and Chartered Arbitrator.",
   },
   {
-    src: "/images/gallery/g6-san-seated.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in Senior Advocate silk robes and wig",
     caption: "Robed in the silk of a Senior Advocate of Nigeria.",
   },
   {
-    src: "/images/gallery/g8-profile.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in barrister's robe, profile portrait",
     caption: "A profile portrait in barrister's robes.",
   },
   {
-    src: "/images/gallery/g9-desk.jpg",
+    src: "/images/gallery/.webp",
     span: "lg:col-span-2",
     alt: "Chief Gadzama in chambers with law reports",
     caption: "At work in chambers, among the law reports.",
   },
   {
-    src: "/images/gallery/g2-robe.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in barrister's robe and wig",
     caption: "Robed and bewigged for court.",
   },
   {
-    src: "/images/gallery/g7-san-robes.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in Senior Advocate robes",
     caption: "In the ceremonial robes of a Senior Advocate.",
   },
   {
-    src: "/images/gallery/g10-suit.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama portrait in suit",
     caption: "A study in counsel.",
   },
   {
-    src: "/images/gallery/g11-san-studio.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in full Senior Advocate ceremonial robes",
     caption: "Full ceremonial dress of a Senior Advocate of Nigeria.",
   },
   {
-    src: "/images/gallery/g3-bookshelf.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama in chambers",
     caption: "In his chambers.",
   },
   {
-    src: "/images/gallery/g12-chancellor.jpg",
+    src: "/images/gallery/.webp",
     span: "lg:col-span-2",
     alt: "Chief Gadzama as Chancellor, Newgate University, Minna",
     caption: "As Chancellor of Newgate University, Minna.",
   },
   {
-    src: "/images/gallery/g5.jpg",
+    src: "/images/gallery/g5.webp",
     span: "",
     alt: "Chief Gadzama portrait",
     caption: "Portrait of Chief Gadzama, OFR, SAN.",
   },
   {
-    src: "/images/gallery/g13-academic.jpg",
+    src: "/images/gallery/.webp",
     span: "lg:col-span-2",
     alt: "Chief Gadzama in academic robes",
     caption: "In academic robes among fellow scholars.",
   },
   {
-    src: "/images/gallery/g4-casual.jpg",
+    src: "/images/gallery/.webp",
     span: "",
     alt: "Chief Gadzama",
     caption: "A candid moment.",
@@ -142,8 +142,7 @@ export default function GalleryClient() {
               />
               <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/25 transition-colors duration-500" />
               <div className="absolute inset-0 ring-1 ring-inset ring-accent/0 group-hover:ring-accent/40 transition-all duration-500" />
-              {/* expand hint */}
-              <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-navy/70 text-accent opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                            <span className="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-navy/70 text-accent opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <polyline points="15 3 21 3 21 9" />
                   <polyline points="9 21 3 21 3 15" />
@@ -156,8 +155,7 @@ export default function GalleryClient() {
         ))}
       </div>
 
-      {/* Lightbox */}
-      {current && (
+            {current && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-navy-deep/90 backdrop-blur-sm animate-fadeIn"
           onClick={close}
@@ -165,8 +163,7 @@ export default function GalleryClient() {
           aria-modal="true"
           aria-label={current.caption}
         >
-          {/* close */}
-          <button
+                    <button
             type="button"
             onClick={close}
             aria-label="Close"
@@ -178,8 +175,7 @@ export default function GalleryClient() {
             </svg>
           </button>
 
-          {/* prev */}
-          <button
+                    <button
             type="button"
             onClick={(e) => { e.stopPropagation(); show(-1); }}
             aria-label="Previous photo"
@@ -190,8 +186,7 @@ export default function GalleryClient() {
             </svg>
           </button>
 
-          {/* next */}
-          <button
+                    <button
             type="button"
             onClick={(e) => { e.stopPropagation(); show(1); }}
             aria-label="Next photo"
@@ -202,13 +197,11 @@ export default function GalleryClient() {
             </svg>
           </button>
 
-          {/* card */}
-          <figure
+                    <figure
             className="max-w-4xl w-full flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+                        <img
               src={current.src}
               alt={current.alt}
               className="max-h-[76vh] w-auto max-w-full object-contain rounded-sm shadow-2xl ring-1 ring-white/10"

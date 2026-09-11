@@ -39,10 +39,8 @@ export default function Footer() {
   return (
     <footer id="site-footer" className="bg-footer-bg text-nav-text pt-16 pb-8">
       <div className="section-container">
-        {/* Main footer grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Branding column */}
-          <div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    <div>
             <h3
               className="text-2xl font-bold text-accent mb-3"
               style={{ fontFamily: "var(--font-display)" }}
@@ -55,8 +53,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Contact column */}
-          <div>
+                    <div>
             <h4 className="eyebrow mb-4">Contact</h4>
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -86,8 +83,7 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Explore column */}
-          <div>
+                    <div>
             <h4 className="eyebrow mb-4">Explore</h4>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               {pageLinks.map((link) => (
@@ -107,8 +103,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            {/* Social icons (Chief's confirmed accounts only) */}
-            <div className="flex gap-4 mt-6">
+                        <div className="flex gap-4 mt-6">
               {socials
                 .filter((s) => !s.pending)
                 .map((s) => (
@@ -127,8 +122,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-navy-line pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="border-t border-navy-line pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-xs">
             © {year} {siteConfig.title}
           </p>
