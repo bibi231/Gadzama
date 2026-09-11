@@ -38,19 +38,29 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// Store subscriber in a server-side CSV log
+$logFile = __DIR__ . '/subscribers.csv';
+$date = date('Y-m-d H:i:s');
+$entry = sprintf("\"%s\",\"%s\",\"%s\"\n", $date, str_replace('"', '""', $email), str_replace('"', '""', $source));
+$fileSaved = @file_put_contents($logFile, $entry, FILE_APPEND | LOCK_EX);
+
+// Send notification email to the office
 $to = 'info@gadzama.com';
 $subject = 'New Newsletter Subscriber via Gadzama.com';
 $body = "You have a new newsletter subscriber from gadzama.com.\n\n" .
         "Email: $email\n" .
-        "Source: $source\n\n" .
-        "Please add this email to your mailing list.";
+        "Source: $source\n" .
+        "Date: $date\n\n" .
+        "This subscriber has also been saved to subscribers.csv on the server.";
 
 $headers = "From: no-reply@gadzama.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 
-if (mail($to, $subject, $body, $headers)) {
+$mailSent = @mail($to, $subject, $body, $headers);
+
+if ($fileSaved !== false || $mailSent) {
     echo json_encode(['success' => true]);
 } else {
     http_response_code(500);
-    echo json_encode(['error' => 'Internal server error. Could not process subscription.']);
+    echo json_encode(['error' => 'Could not record subscription. Please contact info@gadzama.com directly.']);
 }

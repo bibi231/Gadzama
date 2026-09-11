@@ -2,7 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-export default function RevealOnScroll({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+interface RevealProps {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+export default function RevealOnScroll({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +22,7 @@ export default function RevealOnScroll({ children, className = "" }: { children:
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
@@ -24,8 +30,13 @@ export default function RevealOnScroll({ children, className = "" }: { children:
   }, []);
 
   return (
-    <div ref={ref} className={`reveal ${className}`}>
+    <div
+      ref={ref}
+      className={`reveal ${className}`}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    >
       {children}
     </div>
   );
 }
+

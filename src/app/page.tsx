@@ -233,8 +233,8 @@ export default function HomePage() {
           </RevealOnScroll>
 
           <div>
-            {authorityAreas.map((area) => (
-              <RevealOnScroll key={area.num}>
+            {authorityAreas.map((area, idx) => (
+              <RevealOnScroll key={area.num} delay={idx * 70}>
                 <div className="numbered-row">
                   <span className="num">{area.num}</span>
                   <div>
@@ -344,8 +344,8 @@ export default function HomePage() {
                 href: "/vital-links",
                 cta: "Visit",
               },
-            ].map((card) => (
-              <RevealOnScroll key={card.title}>
+            ].map((card, idx) => (
+              <RevealOnScroll key={card.title} delay={idx * 120}>
                 <Link href={card.href} className="block h-full">
                   <div className="card-luxury card-accent-top h-full flex flex-col justify-between min-h-[230px] p-8 md:p-10 shadow-sm hover:shadow-xl">
                     <div>
