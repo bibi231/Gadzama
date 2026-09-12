@@ -27,10 +27,11 @@ export default function CasesPage() {
               <div className="lg:col-span-3">
                 <div className="relative w-full aspect-[3/4] overflow-hidden shadow-lg border border-accent/20">
                   <Image
-                    src="/images/cases-portrait.webp"
+                    src="/images/chief-about.jpg"
                     alt="Chief Joe-Kyari Gadzama, SAN"
                     fill
-                    sizes="(max-width: 1024px) 60vw, 25vw"
+                    unoptimized
+                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 300px"
                     className="object-cover object-top"
                   />
                   <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-accent" />
@@ -110,9 +111,10 @@ export default function CasesPage() {
               </div>
               <div className="relative w-full aspect-[4/3] overflow-hidden shadow-xl border border-accent/20">
                 <Image
-                  src="/images/gallery/g4-casual.webp"
+                  src="/images/gallery/g4-casual.jpg"
                   alt="Chief Gadzama"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top"
                 />

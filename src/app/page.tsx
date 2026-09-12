@@ -154,7 +154,7 @@ export default function HomePage() {
 
       <section className="bg-bg py-24 lg:py-32">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-4">
               <RevealOnScroll>
                 <p className="eyebrow eyebrow-line mb-6 font-bold">The Practitioner</p>
@@ -188,16 +188,17 @@ export default function HomePage() {
                 </div>
               </RevealOnScroll>
             </div>
-            <div className="lg:col-span-8">
-              <RevealOnScroll>
-                <h2 className="text-3xl sm:text-4xl lg:text-[44px] leading-snug text-text mb-8">
+
+            <div className="lg:col-span-5">
+              <RevealOnScroll delay={100}>
+                <h2 className="text-3xl sm:text-4xl lg:text-[40px] leading-snug text-text mb-6">
                   A practitioner&apos;s authority across the full spectrum of{" "}
                   <span className="display-italic text-accent-deep">
                     dispute resolution
                   </span>
                   .
                 </h2>
-                <p className="text-text-muted max-w-2xl leading-relaxed mb-6">
+                <p className="text-text-muted leading-relaxed mb-6">
                   Called to the Nigerian Bar in 1986 and elevated to Senior
                   Advocate of Nigeria in 1998, Chief Gadzama has advised
                   governments, multinational corporations and leading
@@ -209,6 +210,28 @@ export default function HomePage() {
                 <Link href="/about" className="arrow-link">
                   Read full profile <span aria-hidden>→</span>
                 </Link>
+              </RevealOnScroll>
+            </div>
+
+            <div className="lg:col-span-3">
+              <RevealOnScroll delay={200}>
+                <div className="relative group overflow-hidden rounded shadow-2xl border border-accent/30 bg-surface2 aspect-[3/4]">
+                  <Image
+                    src="/images/gallery/g6-san-seated.jpg"
+                    alt="Chief Joe-Kyari Gadzama, SAN"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 25vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 inset-x-3 text-center">
+                    <p className="text-accent text-[11px] font-bold uppercase tracking-[0.18em]">Senior Advocate of Nigeria</p>
+                    <p className="text-white/70 text-[10px] font-serif italic">Ceremonial Robes</p>
+                  </div>
+                  <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-accent/80" />
+                  <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-accent/80" />
+                </div>
               </RevealOnScroll>
             </div>
           </div>
@@ -262,7 +285,7 @@ export default function HomePage() {
         </div>
         <div className="section-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-7">
               <RevealOnScroll>
                 <p className="eyebrow eyebrow-line mb-6">
                   Alternative Dispute Resolution
@@ -278,23 +301,46 @@ export default function HomePage() {
                   Centre has also served as a training hub for ADR
                   professionals.
                 </p>
-                <a
-                  href="https://www.j-kgadzamallp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="arrow-link"
-                >
-                  Visit JICAM <span aria-hidden>→</span>
-                </a>
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href="https://www.j-kgadzamallp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="arrow-link"
+                  >
+                    Visit JICAM <span aria-hidden>→</span>
+                  </a>
+                  <Link href="/cv/arbitration-adr" className="btn-outline text-xs !py-2 !px-4">
+                    Arbitration CV
+                  </Link>
+                </div>
               </RevealOnScroll>
             </div>
-            <div className="lg:col-span-4">
-              <RevealOnScroll>
-                <div className="border border-accent/40 bg-navy-deep/60 backdrop-blur-xs p-10 text-center shadow-lg">
-                  <p className="font-display text-accent text-6xl mb-2">2015</p>
-                  <p className="text-white/70 text-xs uppercase tracking-[0.2em]">
-                    Established · Abuja
-                  </p>
+
+            <div className="lg:col-span-5">
+              <RevealOnScroll delay={150}>
+                <div className="relative rounded overflow-hidden shadow-2xl border border-accent/30 bg-surface2 aspect-[4/3] group">
+                  <Image
+                    src="/images/gallery/g9-desk.jpg"
+                    alt="Chief Gadzama in chambers"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                    <div>
+                      <p className="text-white font-display font-semibold text-base">In Chambers &amp; Arbitration</p>
+                      <p className="text-white/60 text-xs">J-K Gadzama Court, Abuja</p>
+                    </div>
+                    <div className="border border-accent/60 bg-navy-deep/80 backdrop-blur-xs px-3 py-1.5 text-center shadow">
+                      <p className="font-display text-accent text-xl font-bold leading-none">2015</p>
+                      <p className="text-white/70 text-[9px] uppercase tracking-wider">JICAM Est.</p>
+                    </div>
+                  </div>
+                  <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-accent/80" />
+                  <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-accent/80" />
                 </div>
               </RevealOnScroll>
             </div>
@@ -322,7 +368,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-surface border-t border-hairline py-24 lg:py-28">
+      {/* Visual Archive Highlights */}
+      <section className="bg-surface py-20 lg:py-28 border-t border-hairline">
+        <div className="section-container">
+          <RevealOnScroll>
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+              <div>
+                <p className="eyebrow eyebrow-line mb-4 font-bold">Photographic Archive</p>
+                <h2 className="text-3xl sm:text-4xl text-text">
+                  Moments of{" "}
+                  <span className="display-italic text-accent-deep">Advocacy &amp; Service</span>
+                </h2>
+              </div>
+              <Link href="/gallery" className="arrow-link mt-4 md:mt-0 font-semibold">
+                Explore Full Gallery (13 Photos) <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </RevealOnScroll>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                src: "/images/gallery/g7-san-robes.jpg",
+                title: "The Silk Advocate",
+                subtitle: "Robed & Bewigged for Court",
+                badge: "Court Advocacy",
+              },
+              {
+                src: "/images/gallery/g12-chancellor.jpg",
+                title: "University Chancellor",
+                subtitle: "Newgate University, Minna",
+                badge: "Academia",
+              },
+              {
+                src: "/images/gallery/g3-bookshelf.jpg",
+                title: "In Chambers",
+                subtitle: "Among the Law Reports",
+                badge: "Jurisprudence",
+              },
+              {
+                src: "/images/gallery/g1-blue-suit.jpg",
+                title: "Distinguished Statesman",
+                subtitle: "Senior Advocate & Arbitrator",
+                badge: "Counsel",
+              },
+            ].map((item, idx) => (
+              <RevealOnScroll key={item.src} delay={idx * 90}>
+                <Link href="/gallery" className="block group">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded bg-surface2 border border-accent/20 shadow-md group-hover:border-accent/60 group-hover:shadow-xl transition-all duration-500">
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
+                    <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-[0.14em] px-2.5 py-1 rounded bg-navy-deep/80 text-accent border border-accent/30 backdrop-blur-xs shadow">
+                      {item.badge}
+                    </span>
+                    <div className="absolute bottom-4 inset-x-4">
+                      <p className="text-white font-display text-lg font-bold group-hover:text-accent transition-colors">
+                        {item.title}
+                      </p>
+                      <p className="text-white/70 text-xs mt-0.5">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-bg border-t border-hairline py-24 lg:py-28">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[

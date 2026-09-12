@@ -44,9 +44,10 @@ export default function AwardsPage() {
               </div>
               <div className="zoom-img relative h-64 lg:h-auto lg:min-h-[400px]">
                 <Image
-                  src="/images/gallery/g5.webp"
-                  alt="Chief Joe-Kyari Gadzama, OFR, SAN"
+                  src="/images/gallery/g2-robe.jpg"
+                  alt="Chief Joe-Kyari Gadzama, OFR, SAN in silk robes and wig"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top"
                 />
@@ -100,6 +101,45 @@ export default function AwardsPage() {
               </RevealOnScroll>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-hero-bg border-t border-navy-line py-16 lg:py-20 grain relative overflow-hidden">
+        <div className="section-container relative z-10">
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7">
+                <p className="eyebrow eyebrow-line mb-4 font-bold">Academic Leadership</p>
+                <h2 className="text-3xl sm:text-4xl text-nav-text mb-6">
+                  Chancellor of <span className="display-italic text-accent">Newgate University</span>
+                </h2>
+                <p className="text-white/75 leading-relaxed max-w-xl mb-6">
+                  In 2025, Chief Joe-Kyari Gadzama, OFR, SAN was invested as Chancellor of Newgate University, Minna. A crowning academic appointment honoring decades of mentorship, institutional leadership, and philanthropic dedication to tertiary education in Nigeria.
+                </p>
+                <div className="flex items-center gap-4">
+                  <span className="text-accent text-xs font-semibold tracking-wider uppercase border border-accent/40 px-4 py-2 bg-navy-deep/60">
+                    Invested 2025 · Minna, Niger State
+                  </span>
+                </div>
+              </div>
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[4/3] rounded overflow-hidden shadow-2xl border border-accent/30 bg-surface2 group">
+                  <Image
+                    src="/images/gallery/g12-chancellor.jpg"
+                    alt="Chief Gadzama as Chancellor, Newgate University"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+                  <p className="absolute bottom-3 left-4 right-4 text-white font-display text-sm font-semibold">
+                    Investiture as Chancellor, Newgate University, Minna
+                  </p>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
     </>

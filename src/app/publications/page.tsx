@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import {
@@ -116,7 +117,47 @@ export default function PublicationsPage() {
         </div>
       </section>
 
-            <section className="bg-surface border-t border-hairline py-16 md:py-24">
+            {/* Chambers & Legal Scholarship Banner */}
+      <section className="bg-surface border-t border-hairline py-16">
+        <div className="section-container">
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <div className="relative aspect-[4/3] rounded overflow-hidden shadow-xl border border-accent/20 bg-surface2 group">
+                  <Image
+                    src="/images/gallery/g3-bookshelf.jpg"
+                    alt="Chief Gadzama in chambers library"
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+                  <p className="absolute bottom-3 left-4 right-4 text-white font-display text-sm">
+                    In Chambers among Law Reports &amp; Legal Treatises
+                  </p>
+                </div>
+              </div>
+              <div className="lg:col-span-7 order-1 lg:order-2">
+                <p className="eyebrow eyebrow-line mb-4 font-bold">Research &amp; Jurisprudence</p>
+                <h2 className="text-3xl sm:text-4xl text-text mb-4">
+                  A Library of <span className="display-italic text-accent-deep">Authoritative Scholarship</span>
+                </h2>
+                <p className="text-text-muted leading-relaxed mb-6">
+                  For over four decades, Chief Joe-Kyari Gadzama, OFR, SAN has produced landmark legal treatises, peer-reviewed articles, and definitive texts on arbitration, electoral jurisprudence, and commercial dispute resolution widely cited across Nigerian superior courts.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <span className="text-accent-deep font-semibold text-sm border-l-2 border-accent pl-3">
+                    Cited by appellate and supreme courts across Nigeria
+                  </span>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      <section className="bg-bg border-t border-hairline py-16 md:py-24">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <RevealOnScroll>

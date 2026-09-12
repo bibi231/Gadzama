@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import CVList from "@/components/CVList";
 import { arbitrationCV } from "@/content/cv";
@@ -40,8 +41,37 @@ export default function ArbitrationCVPage() {
         </div>
       </PageHeader>
 
-            <section className="py-16 md:py-24 bg-bg">
+            <section className="py-12 md:py-16 bg-bg">
         <div className="section-container max-w-4xl">
+          <div className="mb-12 p-6 sm:p-8 bg-surface border border-accent/25 rounded shadow-lg flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <div className="relative w-28 h-36 sm:w-32 sm:h-40 shrink-0 rounded overflow-hidden border border-accent/40 shadow-md">
+              <Image
+                src="/images/gallery/g8-profile.jpg"
+                alt="Chief Joe-Kyari Gadzama, Chartered Arbitrator"
+                fill
+                unoptimized
+                sizes="150px"
+                className="object-cover object-top"
+              />
+              <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-accent" />
+              <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-accent" />
+            </div>
+            <div className="text-center sm:text-left flex-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent-deep">
+                ADR &amp; Arbitral Credentials
+              </span>
+              <h2 className="text-2xl font-bold text-text mt-1">
+                Chief Joe-Kyari Gadzama
+              </h2>
+              <p className="text-accent-deep font-display italic text-sm mt-0.5">
+                C.Arb, FCIArb, DiplCArb (Keble College, Oxford)
+              </p>
+              <p className="text-text-muted text-xs sm:text-sm mt-2 leading-relaxed">
+                Chartered Arbitrator of the Chartered Institute of Arbitrators (UK) and Chairman, Board of Trustees, Janada International Centre for Arbitration and Mediation (JICAM). Decades of international and domestic tribunal appointments.
+              </p>
+            </div>
+          </div>
+
           <CVList sections={arbitrationCV} />
         </div>
       </section>

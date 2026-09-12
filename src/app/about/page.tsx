@@ -34,9 +34,10 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="relative w-full aspect-[3/4] rounded overflow-hidden bg-surface2 shadow-xl border border-accent/20">
                     <Image
-                      src="/images/chief-about.webp"
+                      src="/images/chief-about.jpg"
                       alt="Chief Joe-Kyari Gadzama, OFR, SAN"
                       fill
+                      unoptimized
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover object-top"
                     />
@@ -95,9 +96,10 @@ export default function AboutPage() {
               <div className="lg:col-span-5 order-2 lg:order-1">
                 <div className="relative w-full aspect-[4/5] overflow-hidden shadow-xl border border-accent/20">
                   <Image
-                    src="/images/gallery/g5.webp"
-                    alt="Chief Joe-Kyari Gadzama in legal robes"
+                    src="/images/gallery/g11-san-studio.jpg"
+                    alt="Chief Joe-Kyari Gadzama, SAN in ceremonial legal robes"
                     fill
+                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 42vw"
                     className="object-cover object-top"
                   />
@@ -222,9 +224,10 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto lg:min-h-[380px] order-2 lg:order-1">
                 <Image
-                  src="/images/gallery/g3-bookshelf.webp"
-                  alt="Chief Gadzama in his chamber"
+                  src="/images/gallery/g13-academic.jpg"
+                  alt="Chief Gadzama in academic robes with scholars"
                   fill
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top"
                 />
